@@ -1,12 +1,18 @@
 import Note from "./Note"
 
 const NoteList = ({ notes, removeNote }) => {
-    return (
-        <ul className="note-list">
-            {notes.map((note) => (
-                < Note key={note.id} note={note} removeNote={removeNote} />
-            ))}
-        </ul>
+    return notes.length > 0 ? 
+    (
+        <div className="note-list">
+            <ul>
+                {notes.map((note) => (
+                    < Note key={note.id} note={note} removeNote={removeNote} />
+                ))}
+            </ul>
+        </div>
+    ):
+    (
+        <div className="empty">No notes to show</div>
     )
 }
 
