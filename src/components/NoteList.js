@@ -1,12 +1,15 @@
+import {NotesContext} from '../context/notesContext'
+import React, { useContext } from 'react'
 import Note from "./Note"
 
-const NoteList = ({ notes, removeNote }) => {
+const NoteList = () => {
+    const{notes, dispatch}=useContext(NotesContext)
     return notes.length > 0 ? 
     (
         <div className="note-list">
             <ul>
                 {notes.map((note) => (
-                    < Note key={note.id} note={note} removeNote={removeNote} />
+                    < Note key={note.id} note={note} dispatch={dispatch} />
                 ))}
             </ul>
         </div>

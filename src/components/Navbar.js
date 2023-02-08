@@ -1,4 +1,8 @@
-const Navbar = ({notes}) => {
+import {NotesContext} from '../context/notesContext'
+import React, { useContext } from 'react'
+
+const Navbar = () => {
+    const{notes}=useContext(NotesContext)
     return (
         <div className='navbar'>
             <h1>NoteApp</h1>
